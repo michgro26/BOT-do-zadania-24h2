@@ -1,0 +1,3 @@
+# tryb verbose - jedna stacja w linii
+A0001-OSWIECIM
+A0002-OP0LE

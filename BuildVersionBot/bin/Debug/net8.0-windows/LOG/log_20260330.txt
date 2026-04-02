@@ -1,0 +1,36 @@
+﻿2026-03-30 13:57:15 [INFO] START BOT (build version scanner), verbose=False
+2026-03-30 13:57:16 [INFO] === START CYCLE === verbose=False
+2026-03-30 13:57:16 [ERROR] Brak pliku z connection stringiem: secureconn.dat
+2026-03-30 13:57:16 [INFO] Sleep for 30 minute(s) before next cycle.
+2026-03-30 14:01:10 [INFO] START BOT (build version scanner), verbose=False
+2026-03-30 14:01:10 [INFO] === START CYCLE === verbose=False
+2026-03-30 14:01:10 [ERROR] Brak pliku z connection stringiem: secureconn.dat
+2026-03-30 14:01:10 [INFO] Sleep for 30 minute(s) before next cycle.
+2026-03-30 14:04:53 [INFO] START BOT (build version scanner), verbose=False
+2026-03-30 14:04:53 [INFO] === START CYCLE === verbose=False
+2026-03-30 14:04:53 [ERROR] CRITICAL cycle error: System.NotImplementedException: Podmień Security/AesConnectionStringProvider.cs na działającą wersję z poprzedniego projektu. Placeholder nie odszyfrowuje pliku: secureconn.dat
+   at BuildVersionBot.Security.AesConnectionStringProvider.GetConnectionString() in D:\CSI\BuildVersionBot\BuildVersionBot\Security\AesConnectionStringProvider.cs:line 17
+   at BuildVersionBot.Program.RunSingleCycleAsync(AppConfig cfg, String[] args, Boolean verboseMode, String computerListPath, FileLogger log, CancellationToken ct) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 123
+   at BuildVersionBot.Program.Main(String[] args) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 53
+2026-03-30 14:04:53 [INFO] Sleep for 30 minute(s) before next cycle.
+2026-03-30 14:12:54 [INFO] START BOT (build version scanner), verbose=False
+2026-03-30 14:12:54 [INFO] === START CYCLE === verbose=False
+2026-03-30 14:12:54 [ERROR] CRITICAL cycle error: System.NotImplementedException: Podmień Security/AesConnectionStringProvider.cs na działającą wersję z poprzedniego projektu. Placeholder nie odszyfrowuje pliku: secureconn.dat
+   at BuildVersionBot.Security.AesConnectionStringProvider.GetConnectionString() in D:\CSI\BuildVersionBot\BuildVersionBot\Security\AesConnectionStringProvider.cs:line 17
+   at BuildVersionBot.Program.RunSingleCycleAsync(AppConfig cfg, String[] args, Boolean verboseMode, String computerListPath, FileLogger log, CancellationToken ct) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 123
+   at BuildVersionBot.Program.Main(String[] args) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 53
+2026-03-30 14:12:54 [INFO] Sleep for 30 minute(s) before next cycle.
+2026-03-30 14:14:24 [INFO] START BOT (build version scanner), verbose=False
+2026-03-30 14:14:24 [INFO] === START CYCLE === verbose=False
+2026-03-30 14:14:24 [ERROR] CRITICAL cycle error: System.NotImplementedException: Podmień Security/AesConnectionStringProvider.cs na działającą wersję z poprzedniego projektu. Placeholder nie odszyfrowuje pliku: secureconn.dat
+   at BuildVersionBot.Security.AesConnectionStringProvider.GetConnectionString() in D:\CSI\BuildVersionBot\BuildVersionBot\Security\AesConnectionStringProvider.cs:line 17
+   at BuildVersionBot.Program.RunSingleCycleAsync(AppConfig cfg, String[] args, Boolean verboseMode, String computerListPath, FileLogger log, CancellationToken ct) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 123
+   at BuildVersionBot.Program.Main(String[] args) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 53
+2026-03-30 14:14:24 [INFO] Sleep for 30 minute(s) before next cycle.
+2026-03-30 14:19:17 [INFO] START BOT (build version scanner), verbose=False
+2026-03-30 14:19:17 [INFO] === START CYCLE === verbose=False
+2026-03-30 14:19:18 [ERROR] CRITICAL cycle error: System.NotImplementedException: Podmień Security/AesConnectionStringProvider.cs na działającą wersję z poprzedniego projektu. Placeholder nie odszyfrowuje pliku: secureconn.dat
+   at BuildVersionBot.Security.AesConnectionStringProvider.GetConnectionString() in D:\CSI\BuildVersionBot\BuildVersionBot\Security\AesConnectionStringProvider.cs:line 17
+   at BuildVersionBot.Program.RunSingleCycleAsync(AppConfig cfg, String[] args, Boolean verboseMode, String computerListPath, FileLogger log, CancellationToken ct) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 123
+   at BuildVersionBot.Program.Main(String[] args) in D:\CSI\BuildVersionBot\BuildVersionBot\Program.cs:line 53
+2026-03-30 14:19:18 [INFO] Sleep for 30 minute(s) before next cycle.
