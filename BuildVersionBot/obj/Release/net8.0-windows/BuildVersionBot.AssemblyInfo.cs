@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuildVersionBot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8d50762a979d2852a8d5f58a1579207633cb6f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuildVersionBot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuildVersionBot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
