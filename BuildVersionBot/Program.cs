@@ -190,6 +190,28 @@ namespace BuildVersionBot
                 targets = LoadTargetsFromFile(verboseFilePath);
                 Console.WriteLine($"[INFO] Tryb verbose. Stacje z pliku: {targets.Count}");
                 log.Info($"Verbose mode. Targets from file '{verboseFilePath}': {targets.Count}");
+
+                var requestedNames = targets.Select(x => x.ComputerName).ToList();
+                var existingInDb = await repo.GetExistingComputerNamesAsync(requestedNames, ct);
+
+                var missingInDb = requestedNames
+                    .Where(x => !existingInDb.Contains(x))
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
+                if (missingInDb.Count > 0)
+                {
+                    SaveMissingInDatabaseReport(missingInDb, log);
+                    Console.WriteLine($"[INFO] Brak w bazie: {missingInDb.Count} (zapisano do BRAK_W_BAZIE.txt)");
+                    log.Info($"Missing in DB: {missingInDb.Count}. Saved to BRAK_W_BAZIE.txt");
+                }
+
+                targets = targets
+                    .Where(x => existingInDb.Contains(x.ComputerName))
+                    .ToList();
+
+                Console.WriteLine($"[INFO] Tryb verbose. Stacje istniejące w bazie: {targets.Count}");
+                log.Info($"Verbose mode. Targets existing in DB: {targets.Count}");
             }
             else
             {
@@ -217,8 +239,6 @@ namespace BuildVersionBot
 
                 if (isVerbose)
                 {
-                    // W verbose ignorujemy LAST_SCAN/PERIOD, ale przed zapisem i tak
-                    // sprawdzamy czy rekord nadal jest "Do realizacji".
                     var names = batch.Select(x => x.ComputerName).ToList();
                     var stillEligible = await repo.GetStillEligibleAsync(names, ct);
 
@@ -385,6 +405,24 @@ namespace BuildVersionBot
                 .ToList();
         }
 
+        private static void SaveMissingInDatabaseReport(List<string> missingComputers, FileLogger log)
+        {
+            try
+            {
+                if (missingComputers == null || missingComputers.Count == 0)
+                    return;
+
+                string reportPath = Path.Combine(AppContext.BaseDirectory, "BRAK_W_BAZIE.txt");
+                File.WriteAllLines(reportPath, missingComputers.OrderBy(x => x));
+
+                log.Info($"Saved missing-in-database report: {reportPath}. Count={missingComputers.Count}");
+            }
+            catch (Exception ex)
+            {
+                log.Error($"Nie udało się zapisać raportu BRAK_W_BAZIE.txt: {ex}");
+            }
+        }
+
         private static void RemoveProcessedComputersFromFile(string filePath, List<string> processedComputers, FileLogger log)
         {
             try
@@ -461,7 +499,6 @@ namespace BuildVersionBot
             public string OfflineResultValue { get; set; } = "OFFLINE";
             public string ErrorResultValue { get; set; } = "BŁĄD";
             public string BotOperatorValue { get; set; } = "Hades2BotBuildVersion";
-
             public string ExpectedSuccessResultValue { get; set; } = "Windows 11, 24h2";
         }
 

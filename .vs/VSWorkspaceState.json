@@ -5,6 +5,6 @@
     "\\BuildVersionBot\\Data",
     "\\BuildVersionBot\\Security"
   ],
-  "SelectedNode": "\\BuildVersionBot\\Program.cs",
+  "SelectedNode": "\\BuildVersionBot\\Data\\BuildScanRepository.cs",
   "PreviewInSolutionExplorer": false
 }
